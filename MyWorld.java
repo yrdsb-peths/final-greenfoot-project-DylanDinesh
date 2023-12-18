@@ -21,8 +21,11 @@ public class MyWorld extends World
         bg1.setOtherBackground(bg2);
         bg2.setOtherBackground(bg1);
 
-        addObject(bg1, 0, 200);
+        addObject(bg1, 150, 200);
         addObject(bg2, 1024, 200);
+        
+        Turtle turtle = new Turtle();
+        addObject(turtle, 300, 300);
     }
 
 }

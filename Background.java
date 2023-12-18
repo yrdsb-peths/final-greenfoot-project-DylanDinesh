@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Background extends Actor
 {
     private int imageWidth;
-    private int offset = 100;
+    private int offset = 250;
     private Background otherBackground;
     private int speed = 4;
     
