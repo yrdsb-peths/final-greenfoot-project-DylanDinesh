@@ -8,17 +8,37 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Turtle extends Actor
 {
-
+    GreenfootImage[] img = new GreenfootImage[3];
+    SimpleTimer animationTimer = new SimpleTimer();
+    
     public Turtle() 
     {
-        GreenfootImage img = new GreenfootImage("tile020.png");
-        img.scale(150, 86);
-        img.mirrorHorizontally();
-        setImage(img);           
+        for (int i = 0; i < img.length; i++)
+        {
+            img[i] = new GreenfootImage("tile02" + i + ".png");
+            img[i].scale(150, 86);
+            img[i].mirrorHorizontally();
+            setImage(img[i]);            
+        }
+        
     }
 
     public void act()
     {
         setLocation(getX(), getY());
+        animateTurtle();
+    }
+    int imageIndex = 0; 
+    public void animateTurtle()
+    {
+        if (animationTimer.millisElapsed() < 100)
+        {
+            return;
+        }
+
+
+        setImage(img[imageIndex]);
+        imageIndex = ((imageIndex + 1) % img.length);
+        animationTimer.mark();
     }
 }
