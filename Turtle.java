@@ -10,7 +10,7 @@ public class Turtle extends Actor
 {
     GreenfootImage[] img = new GreenfootImage[3];
     SimpleTimer animationTimer = new SimpleTimer();
-    
+
     public Turtle() 
     {
         for (int i = 0; i < img.length; i++)
@@ -20,13 +20,42 @@ public class Turtle extends Actor
             img[i].mirrorHorizontally();
             setImage(img[i]);            
         }
-        
-    }
 
+    }
+    boolean go = false;
     public void act()
     {
         setLocation(getX(), getY());
         animateTurtle();
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if (mouse != null)
+        {
+            //use this to get the x position of the mouse.
+            int x = mouse.getX();
+            //use this to get the y position of the mouse.
+            int y = mouse.getY();
+            turnTowards(x, y);
+            int clicks = mouse.getClickCount();
+
+            if (clicks > 0)
+            {
+                go = true;
+            }
+            int i = 0;
+            while (go) {
+                move(1);
+                i++;
+                if (getX() == x && getY() == y)
+                {
+                    go = false;
+                    break;
+                }
+                if (i > 10)
+                {
+                    break;
+                }
+            }
+        }
     }
     int imageIndex = 0; 
     public void animateTurtle()
@@ -35,7 +64,6 @@ public class Turtle extends Actor
         {
             return;
         }
-
 
         setImage(img[imageIndex]);
         imageIndex = ((imageIndex + 1) % img.length);
