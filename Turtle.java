@@ -35,26 +35,7 @@ public class Turtle extends Actor
             //use this to get the y position of the mouse.
             int y = mouse.getY();
             turnTowards(x, y);
-            int clicks = mouse.getClickCount();
-
-            if (clicks > 0)
-            {
-                go = true;
-            }
-            int i = 0;
-            while (go) {
-                move(1);
-                i++;
-                if (getX() == x && getY() == y)
-                {
-                    go = false;
-                    break;
-                }
-                if (i > 10)
-                {
-                    break;
-                }
-            }
+            move(5);
         }
     }
     int imageIndex = 0; 
