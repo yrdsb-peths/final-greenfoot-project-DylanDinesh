@@ -35,6 +35,8 @@ public class Turtle extends Actor
             //use this to get the y position of the mouse.
             int y = mouse.getY();
             turnTowards(x, y);
+            int turtleX = getX();
+            int turtleY = getY();
             move(5);
         }
     }
