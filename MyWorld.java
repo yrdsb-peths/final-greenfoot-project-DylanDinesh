@@ -35,29 +35,45 @@ public class MyWorld extends World
         Seagrass seagrass = new Seagrass();
         // seagrass.setSpeed(level);
         int random = Greenfoot.getRandomNumber(3);
+        
+        // Top Side 
         if (random == 0)
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 0;
             addObject(seagrass, x, y);
+
+            Seagrass.sideSpawned = 0;
         }
+        
+        // Bottom Side
         if (random == 1)
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 400;
             addObject(seagrass, x, y);
+
+            Seagrass.sideSpawned = 1;
         }
+        
+        // Right Side
         if (random == 2)
         {
             int x = 600;
             int y = Greenfoot.getRandomNumber(400);
             addObject(seagrass, x, y);
+
+            Seagrass.sideSpawned = 2;
         }
+        
+        // Left Side
         if (random == 3)
         {
             int x = 0;
             int y = Greenfoot.getRandomNumber(400);
             addObject(seagrass, x, y);
+
+            Seagrass.sideSpawned = 3;
         }
 
     }
