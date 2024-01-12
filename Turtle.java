@@ -36,7 +36,8 @@ public class Turtle extends Actor
             int y = mouse.getY();
             int turtleX = getX();
             int turtleY = getY();
-            if(Math.abs(turtleX - x) > 2) {
+            if (Math.abs(turtleX - x) > 1 && Math.abs(turtleY - y) > 1) 
+            {
                 turnTowards(x, y);
                 move(5);    
             }

@@ -23,9 +23,42 @@ public class MyWorld extends World
 
         addObject(bg1, 150, 200);
         addObject(bg2, 1024, 200);
-        
+
         Turtle turtle = new Turtle();
         addObject(turtle, 300, 300);
+
+        spawnSeagrass();
     }
 
+    public void spawnSeagrass()
+    {
+        Seagrass seagrass = new Seagrass();
+        // seagrass.setSpeed(level);
+        int random = Greenfoot.getRandomNumber(3);
+        if (random == 0)
+        {
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 0;
+            addObject(seagrass, x, y);
+        }
+        if (random == 1)
+        {
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 400;
+            addObject(seagrass, x, y);
+        }
+        if (random == 2)
+        {
+            int x = 600;
+            int y = Greenfoot.getRandomNumber(400);
+            addObject(seagrass, x, y);
+        }
+        if (random == 3)
+        {
+            int x = 0;
+            int y = Greenfoot.getRandomNumber(400);
+            addObject(seagrass, x, y);
+        }
+
+    }
 }
