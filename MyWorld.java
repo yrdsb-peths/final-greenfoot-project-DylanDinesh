@@ -19,7 +19,8 @@ public class MyWorld extends World
     int trashInterval = 100;
     int speedBoostInterval;
     public boolean lose = false;
-
+    GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
+    GreenfootSound gameOverMusic = new GreenfootSound("lose.mp3");
     public MyWorld()
     {    
         super(600, 400, 1, false); 
@@ -38,6 +39,7 @@ public class MyWorld extends World
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 35);
 
+        backgroundMusic.play();
     }
 
     /**
@@ -47,6 +49,8 @@ public class MyWorld extends World
     {
         if (lose == true)
         {
+            backgroundMusic.stop();
+            gameOverMusic.play();
             // EndScreen end = new EndScreen();
             ///Greenfoot.setWorld(end);
             Label gameOver = new Label("GAME OVER", 40);
@@ -63,6 +67,7 @@ public class MyWorld extends World
         }
 
     }
+
     public void increaseScore()
     {
         score++;

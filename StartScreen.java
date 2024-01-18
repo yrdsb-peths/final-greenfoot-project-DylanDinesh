@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class StartScreen extends World
 {
-    Label titleLabel = new Label("Endagered Turtles", 55);
+    Label titleLabel = new Label("Endangered Turtles", 55);
+    GreenfootSound openingSong = new GreenfootSound("openingtheme.mp3");
     /**
      * Constructor for objects of class StartScreen.
      * 
@@ -18,7 +19,8 @@ public class StartScreen extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-        addObject(titleLabel, getWidth()/2-85, 50);
+        openingSong.play();
+        addObject(titleLabel, getWidth()/2, 40);
         prepare();
     }
 
@@ -30,6 +32,7 @@ public class StartScreen extends World
         // Start the game if user presses the space bar. 
         if (Greenfoot.isKeyDown("space"))
         {
+            openingSong.stop();
             MyWorld gameWorld = new MyWorld();
             Greenfoot.setWorld(gameWorld);
         }
@@ -51,7 +54,7 @@ public class StartScreen extends World
         spaceToStart.setLineColor(Color.GRAY);
         addObject(spaceToStart,300,380);
         Turtle turtle = new Turtle();
-        addObject(turtle,505,59);
+        addObject(turtle,getWidth()/2,250);
 
     }
 }

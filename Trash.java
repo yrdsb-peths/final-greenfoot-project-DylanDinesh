@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Trash extends Actor
 {
     GreenfootImage img = new GreenfootImage("trash.png");
-    public static int speed = 3;
+    public static int speed = 1;
     public static int sideSpawned; 
 
     public Trash()
