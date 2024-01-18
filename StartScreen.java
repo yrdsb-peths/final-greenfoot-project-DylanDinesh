@@ -41,9 +41,14 @@ public class StartScreen extends World
      */
     private void prepare()
     {
-        Label instructions = new Label("Move the turtle with your mouse. The turtle will go to the mouse.", 20);
-        addObject(instructions,300,344);
-        Label spaceToStart = new Label("Click space to start", 20);
+        Label instructionsOne = new Label("Move the turtle with your mouse. The turtle will go to the mouse.", 20);
+        instructionsOne.setLineColor(Color.RED);
+        addObject(instructionsOne,300,304);
+        Label instructionsTwo = new Label("Eat seagrass for points and avoid the trash or else you lose!", 20);
+        instructionsTwo.setLineColor(Color.GREEN);
+        addObject(instructionsTwo,300,340);
+        Label spaceToStart = new Label("Click space to start...", 20);
+        spaceToStart.setLineColor(Color.GRAY);
         addObject(spaceToStart,300,380);
         Turtle turtle = new Turtle();
         addObject(turtle,505,59);

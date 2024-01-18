@@ -25,7 +25,7 @@ public abstract class SmoothMover extends Actor
     {
         move((double)distance);
     }
-    
+
     /**
      * Move forward by the specified exact distance.
      */
@@ -36,7 +36,7 @@ public abstract class SmoothMover extends Actor
         double dy = Math.sin(radians) * distance;
         setLocation(exactX + dx, exactY + dy);
     }
-    
+
     /**
      * Set the location using exact coordinates.
      */
@@ -46,7 +46,7 @@ public abstract class SmoothMover extends Actor
         exactY = y;
         super.setLocation((int) (x + 0.5), (int) (y + 0.5));
     }
-    
+
     /**
      * Set the location using integer coordinates.
      * (Overrides the method in Actor.)

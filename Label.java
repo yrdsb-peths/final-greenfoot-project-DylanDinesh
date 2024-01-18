@@ -1,6 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 /**
  * A Label class that allows you to display a textual value on screen.
  * 
@@ -17,10 +16,9 @@ public class Label extends Actor
     private int fontSize;
     private Color lineColor = Color.BLACK;
     private Color fillColor = Color.WHITE;
-    
+
     private static final Color transparent = new Color(0,0,0,0);
 
-    
     /**
      * Create a new label, initialise it with the int value to be shown and the font size 
      */
@@ -28,7 +26,7 @@ public class Label extends Actor
     {
         this(Integer.toString(value), fontSize);
     }
-    
+
     /**
      * Create a new label, initialise it with the needed text and the font size 
      */
@@ -49,7 +47,7 @@ public class Label extends Actor
         this.value = value;
         updateImage();
     }
-    
+
     /**
      * Sets the value as integer
      * 
@@ -60,7 +58,7 @@ public class Label extends Actor
         this.value = Integer.toString(value);
         updateImage();
     }
-    
+
     /**
      * Sets the line color of the text
      * 
@@ -71,7 +69,7 @@ public class Label extends Actor
         this.lineColor = lineColor;
         updateImage();
     }
-    
+
     /**
      * Sets the fill color of the text
      * 
@@ -82,7 +80,6 @@ public class Label extends Actor
         this.fillColor = fillColor;
         updateImage();
     }
-    
 
     /**
      * Update the image on screen to show the current value.
