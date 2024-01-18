@@ -10,13 +10,13 @@ public class Turtle extends Actor
 {
     GreenfootImage[] img = new GreenfootImage[3];
     SimpleTimer animationTimer = new SimpleTimer();
-
+    GreenfootSound scoreUpSound = new GreenfootSound("scoreup.mp3");
     public Turtle() 
     {
         for (int i = 0; i < img.length; i++)
         {
             img[i] = new GreenfootImage("tile02" + i + ".png");
-            img[i].scale(150, 86);
+            img[i].scale(105, 60);
             img[i].mirrorHorizontally();
             setImage(img[i]);            
         }
@@ -45,7 +45,6 @@ public class Turtle extends Actor
 
         }
 
-       
     }
     int imageIndex = 0; 
     public void animateTurtle()
@@ -68,7 +67,7 @@ public class Turtle extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnSeagrass();
             world.increaseScore();
-
+            scoreUpSound.play();
         }
     }
 
