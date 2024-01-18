@@ -18,6 +18,7 @@ public class MyWorld extends World
     public int score;
     Background bg1 = new Background();
     Background bg2 = new Background();
+    Seagrass seagrass = new Seagrass();
     public MyWorld()
     {    
         super(600, 400, 1, false); 
@@ -47,7 +48,7 @@ public class MyWorld extends World
     }
     public void spawnSeagrass()
     {
-        Seagrass seagrass = new Seagrass();
+ 
         // seagrass.setSpeed(level);
         int random = Greenfoot.getRandomNumber(3);
         
@@ -90,6 +91,6 @@ public class MyWorld extends World
 
             Seagrass.sideSpawned = 3;
         }
-
     }
+    
 }

@@ -52,5 +52,16 @@ public class Seagrass extends Actor
             int y = getY();
             setLocation(x, y); 
         }
+
+        missedSeagrass();
+    }
+
+    public void missedSeagrass()
+    {
+        if (isAtEdge()) {
+            MyWorld world = (MyWorld) getWorld();
+            getWorld().removeObject(world.seagrass);
+            world.spawnSeagrass(); 
+        }
     }
 }

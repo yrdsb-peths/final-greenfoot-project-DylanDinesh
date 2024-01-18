@@ -44,8 +44,8 @@ public class Turtle extends Actor
             }
 
         }
-        
-        missedSeagrass();
+
+       
     }
     int imageIndex = 0; 
     public void animateTurtle()
@@ -59,7 +59,7 @@ public class Turtle extends Actor
         imageIndex = ((imageIndex + 1) % img.length);
         animationTimer.mark();
     }
-    
+
     public void eat()
     {
         if (isTouching(Seagrass.class))
@@ -68,12 +68,8 @@ public class Turtle extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.spawnSeagrass();
             world.increaseScore();
-         
+
         }
     }
 
-    public void missedSeagrass()
-    {
-        if (seagrass 
-    }
 }
