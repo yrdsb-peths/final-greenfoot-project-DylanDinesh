@@ -65,6 +65,7 @@ public class Trash extends Actor
             getWorld().removeObject(world.trash);
             world.spawnTrash();
         }
-
     }
+    
+    
 }

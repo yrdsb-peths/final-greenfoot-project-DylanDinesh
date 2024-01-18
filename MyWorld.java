@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @18/01/2024
  */
 public class MyWorld extends World
 {
@@ -47,9 +47,9 @@ public class MyWorld extends World
     {
         score++;
         scoreLabel.setValue(score);
-        if (score % 5 == 0)
+        if (score % 10 == 0)
         {
-            // level++;
+            Trash.speed++;
         }
     }
 
@@ -143,27 +143,6 @@ public class MyWorld extends World
 
             Trash.sideSpawned = 3;
         }
-        
-        if (score > 21)
-        {
-            setTrashSpeed(score/2);
-        }
     }
     
-    public void trashTimePassed()
-    {
-        if (animationTimer.millisElapsed() > 1000)
-        {
-            spawnTrash();
-            animationTimer.mark();
-        }
-        return;
-    }
-
-    public void setTrashSpeed(int spd)
-    {
-        System.out.println(spd);
-        int x = spd/3;
-        Trash.speed = (int)x;        
-    }
 }
