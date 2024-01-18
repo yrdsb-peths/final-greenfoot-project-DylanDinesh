@@ -28,7 +28,7 @@ public class Turtle extends Actor
         setLocation(getX(), getY());
         animateTurtle();
         eat();
-        lose();
+        gameOver();
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (mouse != null)
         {
@@ -71,14 +71,14 @@ public class Turtle extends Actor
             scoreUpSound.play();
         }
     }
-    
-    public void lose()
+
+    public void gameOver()
     {
         if (isTouching(Trash.class))
         {
             removeTouching(Trash.class);
             MyWorld world = (MyWorld) getWorld();
-        
+            world.lose = true;
         }
     }
 

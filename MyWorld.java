@@ -23,6 +23,7 @@ public class MyWorld extends World
     SimpleTimer animationTimer = new SimpleTimer();
     int trashInterval = 100;
     int speedBoostInterval;
+    public boolean lose = false;
 
     public MyWorld()
     {    
@@ -41,6 +42,21 @@ public class MyWorld extends World
 
         scoreLabel = new Label(0, 80);
         addObject(scoreLabel, 50, 35);
+
+    }
+
+    public void act()
+    {
+        if (lose == true)
+        {
+            // EndScreen end = new EndScreen();
+            ///Greenfoot.setWorld(end);
+            Label gameOver = new Label("GAME OVER", 40);
+            addObject(gameOver,300,344);
+            Label  scoreLabel = new Label(score, 20);
+            addObject(scoreLabel,300,344);
+            removeObject(seagrass);
+        }
     }
 
     public void increaseScore()
@@ -97,7 +113,7 @@ public class MyWorld extends World
 
             Seagrass.sideSpawned = 3;
         }
-        
+
     }
 
     public void spawnTrash()
@@ -144,5 +160,5 @@ public class MyWorld extends World
             Trash.sideSpawned = 3;
         }
     }
-    
+
 }

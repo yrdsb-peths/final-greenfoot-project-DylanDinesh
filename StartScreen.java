@@ -1,26 +1,23 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Title Screen 
+ * Write a description of class StartScreen here.
  * 
- * @author Dylan Dinesh
- * @version Jan 2024
+ * @Dylan Dinesh  * @Jan 2024
  */
-public class TitleScreen extends World
+public class StartScreen extends World
 {
-    Label titleLabel = new Label("Endagered Turtle", 60);
-    GreenfootImage img = new GreenfootImage("trash.png");
-
+    Label titleLabel = new Label("Endagered Turtles", 55);
     /**
-     * Constructor for objects of class TitleScreen.
+     * Constructor for objects of class StartScreen.
      * 
      */
-    public TitleScreen()
+    public StartScreen()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-        setImage(img);
-        addObject(titleLabel, getWidth()/2-110, 50);
+        prepare();
+        addObject(titleLabel, getWidth()/2-90, 50);
         prepare();
     }
 
@@ -43,9 +40,12 @@ public class TitleScreen extends World
      */
     private void prepare()
     {
-        Label label = new Label("Move the turtle with your mouse. The turtle will go to the mouse.", 40);
-        addObject(label,210,344);
+        Label instructions = new Label("Move the turtle with your mouse. The turtle will go to the mouse.", 20);
+        addObject(instructions,300,344);
+        Label spaceToStart = new Label("Click space to start", 20);
+        addObject(spaceToStart,300,380);
         Turtle turtle = new Turtle();
         addObject(turtle,505,59);
+
     }
 }

@@ -66,6 +66,5 @@ public class Trash extends Actor
             world.spawnTrash();
         }
     }
-    
-    
+
 }
