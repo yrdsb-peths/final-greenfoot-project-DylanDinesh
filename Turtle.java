@@ -27,6 +27,7 @@ public class Turtle extends Actor
     {
         setLocation(getX(), getY());
         animateTurtle();
+        eat();
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if (mouse != null)
         {
@@ -36,13 +37,15 @@ public class Turtle extends Actor
             int y = mouse.getY();
             int turtleX = getX();
             int turtleY = getY();
-            if (Math.abs(turtleX - x) > 1 && Math.abs(turtleY - y) > 1) 
+            if (Math.abs(turtleX - x) > 2 && Math.abs(turtleY - y) > 2) 
             {
                 turnTowards(x, y);
-                move(5);    
+                move(7);    
             }
-            
+
         }
+        
+        missedSeagrass();
     }
     int imageIndex = 0; 
     public void animateTurtle()
@@ -55,5 +58,22 @@ public class Turtle extends Actor
         setImage(img[imageIndex]);
         imageIndex = ((imageIndex + 1) % img.length);
         animationTimer.mark();
+    }
+    
+    public void eat()
+    {
+        if (isTouching(Seagrass.class))
+        {
+            removeTouching(Seagrass.class);
+            MyWorld world = (MyWorld) getWorld();
+            world.spawnSeagrass();
+            world.increaseScore();
+         
+        }
+    }
+
+    public void missedSeagrass()
+    {
+        if (seagrass 
     }
 }

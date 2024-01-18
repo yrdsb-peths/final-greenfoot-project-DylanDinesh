@@ -13,6 +13,9 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    
+    Label scoreLabel;
+    public int score;
     Background bg1 = new Background();
     Background bg2 = new Background();
     public MyWorld()
@@ -28,8 +31,20 @@ public class MyWorld extends World
         addObject(turtle, 300, 300);
 
         spawnSeagrass();
+        
+        scoreLabel = new Label(0, 80);
+        addObject(scoreLabel, 50, 35);
     }
-
+    
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+        if (score % 5 == 0)
+        {
+            // level++;
+        }
+    }
     public void spawnSeagrass()
     {
         Seagrass seagrass = new Seagrass();

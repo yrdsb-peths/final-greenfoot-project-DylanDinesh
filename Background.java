@@ -21,10 +21,6 @@ public class Background extends Actor
         this.otherBackground = otherBackground;
     }
     
-    public void increaseSpeed() {
-        speed += 1;
-    }
-    
     public void act()
     {
         if(getX() < -imageWidth + offset) {
