@@ -18,6 +18,9 @@ public class Trash extends Actor
         setImage(img);  
     }
 
+    /**
+     * Trash moves to the opposite wall it spawned from. 
+     */
     public void act()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -58,6 +61,9 @@ public class Trash extends Actor
         missedTrash();
     }
 
+    /**
+     * Any trashed that missed is respawned. 
+     */
     public void missedTrash()
     {
         if (isAtEdge()) {

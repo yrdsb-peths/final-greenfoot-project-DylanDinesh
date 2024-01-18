@@ -18,6 +18,9 @@ public class Seagrass extends Actor
         setImage(img);  
     }
 
+    /**
+     * Contains the missed seagrass code as well as makes the seagrass go to the opposite wall it spawned from. 
+     */
     public void act()
     {
         // Top Side
@@ -56,6 +59,9 @@ public class Seagrass extends Actor
         missedSeagrass();
     }
 
+    /**
+     * When the seagrass is at the edge of the world, d. it is respawned in another random location on the border of the world.
+     */
     public void missedSeagrass()
     {
         if (isAtEdge()) {

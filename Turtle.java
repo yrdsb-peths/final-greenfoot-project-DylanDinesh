@@ -23,7 +23,10 @@ public class Turtle extends Actor
         }
 
     }
-    boolean go = false;
+
+    /**
+     * Turtle is animated, can eat seagrass and goes to wherever the cursor is. 
+     */
     public void act()
     {
         setLocation(getX(), getY());
@@ -73,6 +76,9 @@ public class Turtle extends Actor
         }
     }
 
+    /**
+     * When turtle touches seagrass, the trash is removed and the lose boolean under the world class is set to true. 
+     */
     public void gameOver()
     {
         if (isTouching(Trash.class))

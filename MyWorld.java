@@ -40,6 +40,9 @@ public class MyWorld extends World
 
     }
 
+    /**
+     * Label and message when game is over. This removes the seagrass object as well. 
+     */
     public void act()
     {
         if (lose == true)
@@ -64,6 +67,9 @@ public class MyWorld extends World
         }
     }
 
+    /**
+     * Seagrass is spawned in a random location on the wall of the world. 
+     */
     public void spawnSeagrass()
     {
 
@@ -111,6 +117,9 @@ public class MyWorld extends World
 
     }
 
+    /**
+     * Trash is spawned in a random location on the wall of the world. 
+     */
     public void spawnTrash()
     {
         int random = Greenfoot.getRandomNumber(3);
