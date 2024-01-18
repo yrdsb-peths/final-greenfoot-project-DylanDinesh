@@ -14,7 +14,7 @@ public class Seagrass extends Actor
 
     public Seagrass()
     {
-        img.scale(52, 74);
+        img.scale(42, 59);
         setImage(img);  
     }
 

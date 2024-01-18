@@ -9,17 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Trash extends Actor
 {
     GreenfootImage img = new GreenfootImage("trash.png");
-    int speed = 3;
+    public static int speed = 3;
     public static int sideSpawned; 
 
     public Trash()
     {
-        img.scale(52, 74);
+        img.scale(42, 59);
         setImage(img);  
     }
 
     public void act()
     {
+        MyWorld world = (MyWorld) getWorld();
+
         // Top Side
         if (sideSpawned == 0) 
         {
@@ -61,7 +63,8 @@ public class Trash extends Actor
         if (isAtEdge()) {
             MyWorld world = (MyWorld) getWorld();
             getWorld().removeObject(world.trash);
-            world.trashTimePassed();
+            world.spawnTrash();
         }
+
     }
 }

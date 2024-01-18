@@ -23,7 +23,7 @@ public class MyWorld extends World
     SimpleTimer animationTimer = new SimpleTimer();
     int trashInterval = 100;
     int speedBoostInterval;
-    public static int temp;
+
     public MyWorld()
     {    
         super(600, 400, 1, false); 
@@ -56,7 +56,6 @@ public class MyWorld extends World
     public void spawnSeagrass()
     {
 
-        // seagrass.setSpeed(level);
         int random = Greenfoot.getRandomNumber(3);
 
         // Top Side 
@@ -98,12 +97,11 @@ public class MyWorld extends World
 
             Seagrass.sideSpawned = 3;
         }
+        
     }
 
     public void spawnTrash()
     {
-
-        // seagrass.setSpeed(level);
         int random = Greenfoot.getRandomNumber(3);
 
         // Top Side 
@@ -145,6 +143,11 @@ public class MyWorld extends World
 
             Trash.sideSpawned = 3;
         }
+        
+        if (score > 21)
+        {
+            setTrashSpeed(score/2);
+        }
     }
     
     public void trashTimePassed()
@@ -155,7 +158,12 @@ public class MyWorld extends World
             animationTimer.mark();
         }
         return;
-        
     }
 
+    public void setTrashSpeed(int spd)
+    {
+        System.out.println(spd);
+        int x = spd/3;
+        Trash.speed = (int)x;        
+    }
 }
