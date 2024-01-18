@@ -20,6 +20,10 @@ public class MyWorld extends World
     Background bg2 = new Background();
     Seagrass seagrass = new Seagrass();
     Trash trash = new Trash();
+    SimpleTimer animationTimer = new SimpleTimer();
+    int trashInterval = 100;
+    int speedBoostInterval;
+    public static int temp;
     public MyWorld()
     {    
         super(600, 400, 1, false); 
@@ -107,7 +111,7 @@ public class MyWorld extends World
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 0;
-            addObject(seagrass, x, y);
+            addObject(trash, x, y);
 
             Trash.sideSpawned = 0;
         }
@@ -117,7 +121,7 @@ public class MyWorld extends World
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 400;
-            addObject(seagrass, x, y);
+            addObject(trash, x, y);
 
             Trash.sideSpawned = 1;
         }
@@ -127,7 +131,7 @@ public class MyWorld extends World
         {
             int x = 600;
             int y = Greenfoot.getRandomNumber(400);
-            addObject(seagrass, x, y);
+            addObject(trash, x, y);
 
             Trash.sideSpawned = 2;
         }
@@ -137,10 +141,21 @@ public class MyWorld extends World
         {
             int x = 0;
             int y = Greenfoot.getRandomNumber(400);
-            addObject(seagrass, x, y);
+            addObject(trash, x, y);
 
             Trash.sideSpawned = 3;
         }
+    }
+    
+    public void trashTimePassed()
+    {
+        if (animationTimer.millisElapsed() > 1000)
+        {
+            spawnTrash();
+            animationTimer.mark();
+        }
+        return;
+        
     }
 
 }

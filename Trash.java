@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Trash extends Actor
 {
     GreenfootImage img = new GreenfootImage("trash.png");
-    int speed = 4;
+    int speed = 3;
     public static int sideSpawned; 
 
     public Trash()
@@ -53,15 +53,15 @@ public class Trash extends Actor
             setLocation(x, y); 
         }
 
-        //missedTrash();
+        missedTrash();
     }
 
     public void missedTrash()
     {
         if (isAtEdge()) {
             MyWorld world = (MyWorld) getWorld();
-            getWorld().removeObject(world.seagrass);
-            world.spawnTrash(); 
+            getWorld().removeObject(world.trash);
+            world.trashTimePassed();
         }
     }
 }
