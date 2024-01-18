@@ -12,7 +12,7 @@ public class StartScreen extends World
     GreenfootSound openingSong = new GreenfootSound("openingtheme.mp3");
     /**
      * Constructor for objects of class StartScreen.
-     * 
+     * Plays opening music as well.
      */
     public StartScreen()
     {    
@@ -25,7 +25,7 @@ public class StartScreen extends World
     }
 
     /**
-     * The main world act loop
+     * The main world opens by clicking the space bar. 
      */
     public void act()
     {
