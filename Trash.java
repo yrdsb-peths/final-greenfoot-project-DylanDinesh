@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Trash here.
+ * The trash class is for the trash actor which is the object that the player must dodge throughout. The trashs' speed increases over time. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @Jan 2024
  */
 public class Trash extends Actor
 {

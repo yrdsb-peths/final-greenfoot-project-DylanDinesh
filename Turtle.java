@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Turtle here.
+ * This is the clas for the turtle. This contains the sounds the turtle gets for eatnig seagrass, what happens when the turtle collides with other 
+ * actors, as well as the turtle animation and movement. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh 
+ * @Jan 2024 
  */
 public class Turtle extends Actor
 {

@@ -1,9 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class StartScreen here.
+ * Starting srceen with instructions for players. They must click space to start. 
  * 
- * @Dylan Dinesh  * @Jan 2024
+ * @Dylan Dinesh  
+ * @Jan 2024
  */
 public class StartScreen extends World
 {

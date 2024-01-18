@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Seagrass here.
+ * This is what the player as the turtle has to pick up and eat for points. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @Jan 2024
  */
 public class Seagrass extends Actor
 {

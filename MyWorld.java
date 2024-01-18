@@ -1,19 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
+ * Main world of this game. This is where the game itself occurs. The player must avoid trash 
+ * or else they will lose and try to pick up as much seagrass as possible. 
  * 
  * @Dylan Dinesh
  * @18/01/2024
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
-
     Label scoreLabel;
     public int score;
     Background bg1 = new Background();
