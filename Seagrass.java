@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Seagrass here.
+ * This is what the player as the turtle has to pick up and eat for points. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @Jan 2024
  */
 public class Seagrass extends Actor
 {
@@ -14,10 +14,13 @@ public class Seagrass extends Actor
 
     public Seagrass()
     {
-        img.scale(52, 74);
+        img.scale(42, 59);
         setImage(img);  
     }
 
+    /**
+     * Contains the missed seagrass code as well as makes the seagrass go to the opposite wall it spawned from. 
+     */
     public void act()
     {
         // Top Side
@@ -56,6 +59,9 @@ public class Seagrass extends Actor
         missedSeagrass();
     }
 
+    /**
+     * When the seagrass is at the edge of the world, d. it is respawned in another random location on the border of the world.
+     */
     public void missedSeagrass()
     {
         if (isAtEdge()) {

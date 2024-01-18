@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Background here.
+ * The code here is used to have a continous scrolling background when the game starts. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @aDylan Dinesh
+ * @Dec 2023
  */
 public class Background extends Actor
 {
@@ -12,15 +12,15 @@ public class Background extends Actor
     private int offset = 250;
     private Background otherBackground;
     private int speed = 4;
-    
+
     public Background() {
         imageWidth = getImage().getWidth();    
     }
-    
+
     public void setOtherBackground(Background otherBackground) {
         this.otherBackground = otherBackground;
     }
-    
+
     public void act()
     {
         if(getX() < -imageWidth + offset) {
