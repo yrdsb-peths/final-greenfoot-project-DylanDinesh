@@ -30,7 +30,7 @@ public class MyWorld extends World
         addObject(bg2, 1024, 200);
 
         Turtle turtle = new Turtle();
-        addObject(turtle, 300, 300);
+        addObject(turtle, getWidth()/2, getHeight()/2);
 
         spawnSeagrass();
         spawnTrash();
@@ -51,12 +51,18 @@ public class MyWorld extends World
             ///Greenfoot.setWorld(end);
             Label gameOver = new Label("GAME OVER", 40);
             addObject(gameOver,300,344);
-            Label  scoreLabel = new Label(score, 20);
-            addObject(scoreLabel,300,344);
+            removeObject(scoreLabel);
+            Label  finalScore = new Label("Final Score is: " + score, 40);
+            addObject(finalScore,300,250);
             removeObject(seagrass);
+            Label spaceToRetry = new Label("Press Space to retry....", 40);
+            addObject(spaceToRetry,300,300);    
+            if (Greenfoot.isKeyDown("space")) {
+                Greenfoot.setWorld(new MyWorld());
+            }
         }
-    }
 
+    }
     public void increaseScore()
     {
         score++;
