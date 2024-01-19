@@ -15,12 +15,15 @@ public class MyWorld extends World
     Background bg2 = new Background();
     Seagrass seagrass = new Seagrass();
     Trash trash = new Trash();
+    Turtle turtle = new Turtle();
+    SpeedBoost boost = new SpeedBoost();
     SimpleTimer animationTimer = new SimpleTimer();
     int trashInterval = 100;
     int speedBoostInterval;
     public boolean lose = false;
     GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
     GreenfootSound gameOverMusic = new GreenfootSound("lose.mp3");
+
     public MyWorld()
     {    
         super(600, 400, 1, false); 
@@ -30,7 +33,6 @@ public class MyWorld extends World
         addObject(bg1, 150, 200);
         addObject(bg2, 1024, 200);
 
-        Turtle turtle = new Turtle();
         addObject(turtle, getWidth()/2, getHeight()/2);
 
         spawnSeagrass();
@@ -59,9 +61,10 @@ public class MyWorld extends World
             Label  finalScore = new Label("Final Score is: " + score, 40);
             addObject(finalScore,300,250);
             removeObject(seagrass);
-            Label spaceToRetry = new Label("Press Space to retry....", 40);
+            Label spaceToRetry = new Label("Press Space to retry...." + turtle.moveSpeed, 40);
             addObject(spaceToRetry,300,300);    
             if (Greenfoot.isKeyDown("space")) {
+                Trash.speed = 1;
                 Greenfoot.setWorld(new MyWorld());
             }
         }
@@ -75,6 +78,11 @@ public class MyWorld extends World
         if (score % 10 == 0)
         {
             Trash.speed++;
+        }
+
+        if (score % 5 == 0)
+        {
+            spawnSpeedBoost();
         }
     }
 
@@ -176,4 +184,47 @@ public class MyWorld extends World
         }
     }
 
+    public void spawnSpeedBoost()
+    {
+        int random = Greenfoot.getRandomNumber(3);
+        // Top Side 
+        if (random == 0)
+        {
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 0;
+            addObject(boost, x, y);
+
+            SpeedBoost.sideSpawned = 0;
+        }
+
+        // Bottom Side
+        if (random == 1)
+        {
+            int x = Greenfoot.getRandomNumber(600);
+            int y = 400;
+            addObject(boost, x, y);
+
+            SpeedBoost.sideSpawned = 1;
+        }
+
+        // Right Side
+        if (random == 2)
+        {
+            int x = 600;
+            int y = Greenfoot.getRandomNumber(400);
+            addObject(boost, x, y);
+
+            SpeedBoost.sideSpawned = 2;
+        }
+
+        // Left Side
+        if (random == 3)
+        {
+            int x = 0;
+            int y = Greenfoot.getRandomNumber(400);
+            addObject(boost, x, y);
+
+            SpeedBoost.sideSpawned = 3;
+        }
+    }
 }

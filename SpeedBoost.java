@@ -1,25 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * The trash class is for the trash actor which is the object that the player must dodge throughout. The trashs' speed increases over time. 
+ * SpeedBoost class is an actor which spawn in at every 5 points earned. 
+ * If the player (the turtle) comes in contact the speed boost, 
+ * their speed will increase by 1. 
+ * This speed increase can be stacked. 
  * 
  * @Dylan Dinesh
  * @Jan 2024
  */
-public class Trash extends Actor
+public class SpeedBoost extends Actor
 {
-    GreenfootImage img = new GreenfootImage("trash.png");
-    public static int speed = 1;
+    GreenfootImage img = new GreenfootImage("speed.png");
+    public int speed = 5;
     public static int sideSpawned; 
 
-    public Trash()
+    public SpeedBoost()
     {
         img.scale(42, 59);
         setImage(img);  
     }
 
     /**
-     * Trash moves to the opposite wall it spawned from. 
+     * SpeedBoost moves to the opposite wall it spawned from. 
      */
     public void act()
     {
@@ -57,20 +60,15 @@ public class Trash extends Actor
             int y = getY();
             setLocation(x, y); 
         }
-
-        missedTrash();
+        
+        missedSpeedBoost();
     }
 
-    /**
-     * Any trash that was missed is respawned. 
-     */
-    public void missedTrash()
+    public void missedSpeedBoost()
     {
         if (isAtEdge()) {
             MyWorld world = (MyWorld) getWorld();
-            getWorld().removeObject(world.trash);
-            world.spawnTrash();
+            getWorld().removeObject(world.boost); 
         }
     }
-
 }

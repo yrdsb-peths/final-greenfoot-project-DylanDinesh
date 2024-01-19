@@ -2,7 +2,7 @@
 
 
 ## Summary
-Endagered Turtles is a game where you will use your mouse to control the turtle, and the turle will lead to wherever the cursor of your mouse is. To get points, the turtle must eat seagrass, and the turtle mutss avoid the trash or else it will be game over. To start playing the game, all you must do in presss the space bar, and the game will begin. As the player gains points and their score goes up, it must be noted that the trash will also start to travel faster. 
+Endagered Turtles is a game where you will use your mouse to control the turtle, and the turle will lead to wherever the cursor of your mouse is. To get points, the turtle must eat seagrass, and the turtle mutss avoid the trash or else it will be game over. To start playing the game, all you must do in presss the space bar, and the game will begin. As the player gains points and their score goes up, it must be noted that the trash will also start to travel faster.  There is also a speed boost powerup the turtle can go to increase the turtle/player's movement speed. Click the space bar at the end to retry.
 
 ## Image Sources
 Turtle URL: 
@@ -19,6 +19,9 @@ https://www.shutterstock.com/image-vector/plastic-trash-bag-game-pixel-art-23154
 
 Seagrass URL: 
 https://www.vecteezy.com/vector-art/25695058-pixel-art-illustration-seaweed-pixelated-seaweed-green-seaweed-icon-pixelated-for-the-pixel-art-game-and-icon-for-website-and-video-game-old-school-retro
+
+Speed Boost URL:
+https://www.istockphoto.com/photos/pixel-power-up 
 
 ## Sound/Music Sources
 Score Increase Sound URL: 

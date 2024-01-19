@@ -12,6 +12,7 @@ public class Turtle extends Actor
     GreenfootImage[] img = new GreenfootImage[3];
     SimpleTimer animationTimer = new SimpleTimer();
     GreenfootSound scoreUpSound = new GreenfootSound("scoreup.mp3");
+    public int moveSpeed = 7; 
     public Turtle() 
     {
         for (int i = 0; i < img.length; i++)
@@ -45,11 +46,12 @@ public class Turtle extends Actor
             if (Math.abs(turtleX - x) > 2 && Math.abs(turtleY - y) > 2) 
             {
                 turnTowards(x, y);
-                move(7);    
+                move(moveSpeed);    
             }
 
         }
-
+        
+        turtleGetsSpeedBoost();
     }
     int imageIndex = 0; 
     public void animateTurtle()
@@ -89,4 +91,14 @@ public class Turtle extends Actor
         }
     }
 
+    public void turtleGetsSpeedBoost()
+    {
+        if (isTouching(SpeedBoost.class))
+        {
+            removeTouching(SpeedBoost.class);
+            MyWorld world = (MyWorld) getWorld();
+            moveSpeed++;
+        }
+
+    }
 }
