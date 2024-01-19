@@ -22,7 +22,6 @@ public class MyWorld extends World
     int speedBoostInterval;
     public boolean lose = false;
     GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
-    GreenfootSound gameOverMusic = new GreenfootSound("lose.mp3");
 
     public MyWorld()
     {    
@@ -215,19 +214,8 @@ public class MyWorld extends World
 
     public void loseScreen()
     {
-        backgroundMusic.stop();
-        gameOverMusic.play();
-        Label gameOver = new Label("GAME OVER", 40);
-        addObject(gameOver,300,344);
-        removeObject(scoreLabel);
-        Label  finalScore = new Label("Final Score is: " + score, 40);
-        addObject(finalScore,300,250);
-        removeObject(seagrass);
-        Label spaceToRetry = new Label("Press Space to retry....", 40);
-        addObject(spaceToRetry,300,300);    
-        if (Greenfoot.isKeyDown("space")) {
-            Trash.speed = 1;
-            Greenfoot.setWorld(new MyWorld());
-        }
+        backgroundMusic.stop();;
+        EndScreen gameEnd = new EndScreen(score);
+        Greenfoot.setWorld(gameEnd);
     }
 }
