@@ -14,6 +14,9 @@ https://www.svg.com/147808/underappreciated-gems-in-the-switch-eshop-you-need-to
 Game (MyWorld class) Background URL:
 https://www.template.net/editable/99126/underwater-zoom-background
 
+Game Over World Background URL:
+https://www.pinterest.ca/pin/314407617729965964/
+
 Trash URL: 
 https://www.shutterstock.com/image-vector/plastic-trash-bag-game-pixel-art-2315428227?pl=77643-108110 
 
