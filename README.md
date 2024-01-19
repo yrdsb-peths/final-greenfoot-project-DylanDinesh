@@ -9,7 +9,7 @@ Turtle URL:
 https://www.shutterstock.com/image-vector/sea-tutle-various-species-animal-animation-1903144105 
 
 Start Screen Background URL:
-https://www.svg.com/147808/underappreciated-gems-in-the-switch-eshop-you-need-to-play/
+https://www.curseforge.com/minecraft/modpacks/prey-beta 
 
 Game (MyWorld class) Background URL:
 https://www.template.net/editable/99126/underwater-zoom-background
