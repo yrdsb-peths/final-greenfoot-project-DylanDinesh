@@ -50,7 +50,7 @@ public class Turtle extends Actor
             }
 
         }
-        
+
         turtleGetsSpeedBoost();
     }
     int imageIndex = 0; 

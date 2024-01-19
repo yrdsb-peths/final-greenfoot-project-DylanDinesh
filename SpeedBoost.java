@@ -60,7 +60,7 @@ public class SpeedBoost extends Actor
             int y = getY();
             setLocation(x, y); 
         }
-        
+
         missedSpeedBoost();
     }
 

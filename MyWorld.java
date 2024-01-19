@@ -51,22 +51,7 @@ public class MyWorld extends World
     {
         if (lose == true)
         {
-            backgroundMusic.stop();
-            gameOverMusic.play();
-            // EndScreen end = new EndScreen();
-            ///Greenfoot.setWorld(end);
-            Label gameOver = new Label("GAME OVER", 40);
-            addObject(gameOver,300,344);
-            removeObject(scoreLabel);
-            Label  finalScore = new Label("Final Score is: " + score, 40);
-            addObject(finalScore,300,250);
-            removeObject(seagrass);
-            Label spaceToRetry = new Label("Press Space to retry...." + turtle.moveSpeed, 40);
-            addObject(spaceToRetry,300,300);    
-            if (Greenfoot.isKeyDown("space")) {
-                Trash.speed = 1;
-                Greenfoot.setWorld(new MyWorld());
-            }
+            loseScreen();
         }
 
     }
@@ -225,6 +210,24 @@ public class MyWorld extends World
             addObject(boost, x, y);
 
             SpeedBoost.sideSpawned = 3;
+        }
+    }
+
+    public void loseScreen()
+    {
+        backgroundMusic.stop();
+        gameOverMusic.play();
+        Label gameOver = new Label("GAME OVER", 40);
+        addObject(gameOver,300,344);
+        removeObject(scoreLabel);
+        Label  finalScore = new Label("Final Score is: " + score, 40);
+        addObject(finalScore,300,250);
+        removeObject(seagrass);
+        Label spaceToRetry = new Label("Press Space to retry....", 40);
+        addObject(spaceToRetry,300,300);    
+        if (Greenfoot.isKeyDown("space")) {
+            Trash.speed = 1;
+            Greenfoot.setWorld(new MyWorld());
         }
     }
 }
