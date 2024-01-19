@@ -24,6 +24,13 @@ https://www.vecteezy.com/vector-art/25695058-pixel-art-illustration-seaweed-pixe
 Score Increase Sound URL: 
 https://www.youtube.com/watch?v=TCD77mH0lYs
 
+Opening Music:
+https://www.youtube.com/watch?v=UaRrDZWhtWA
 
+Game Background Music:
+https://www.youtube.com/watch?v=-5rAjOjTGtc
+
+Lose Sonund EFfect:
+https://www.youtube.com/watch?v=jAIlKqL3nHo 
 
 
