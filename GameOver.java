@@ -1,17 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GameOver here.
+ * As there was a delay when switching to a game over world, this actor 
+ * which was the image of the world was created. 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @Jan 2024
  */
 public class GameOver extends Actor
 {
-    /**
-     * Act - do whatever the GameOver wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+
     public void act()
     {
         // Add your action code here.

@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * The code here is used to have a continous scrolling background when the game starts. 
  * 
- * @aDylan Dinesh
+ * @Dylan Dinesh
  * @Dec 2023
  */
 public class Background extends Actor

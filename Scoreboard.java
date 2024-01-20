@@ -1,19 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Scoreboard here.
+ * This class contains an image of the scoreboard used in the 
+ * game over scene.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Dylan Dinesh
+ * @Jan 2024
  */
 public class Scoreboard extends Actor
 {
+
     /**
-     * Act - do whatever the Scoreboard wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Resize scoreboard image. 
      */
+    public Scoreboard()
+    {
+        GreenfootImage img = new GreenfootImage("scoreboard.png"); 
+        img.scale(240, 270);
+        setImage(img);
+    }
+
     public void act()
     {
-        // Add your action code here.
+
     }
 }

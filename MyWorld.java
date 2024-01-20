@@ -216,19 +216,22 @@ public class MyWorld extends World
     {
         backgroundMusic.stop();
         GameOver gameOverScreen = new GameOver();
+        GameOverText text = new GameOverText();
         addObject(gameOverScreen, getWidth()/2, getHeight()/2);
         gameOverMusic.play();
-        Label gameOver = new Label("GAME OVER", 40);
-        addObject(gameOver,300,244);
-        Label  finalScore = new Label("Final Score is: " + score, 40);
-        addObject(finalScore,300,150);
+        Scoreboard scoreboard = new Scoreboard();
+        addObject(scoreboard, getWidth()/2, getHeight()/2+10);
+        Label  finalScore = new Label(score, 125);
+        addObject(finalScore,300,230);
         Label spaceToRetry = new Label("Press Space to retry....", 40);
-        addObject(spaceToRetry,300,200);
+        addObject(spaceToRetry,getWidth()/2,370);
+        addObject(text, 300, 44);
         removeObject(seagrass);
         if (Greenfoot.isKeyDown("space")) {
             gameOverMusic.pause();
             Trash.speed = 1;
             removeObject(gameOverScreen);
+            removeObject(scoreboard);
             Greenfoot.setWorld(new MyWorld());
         }
     }
