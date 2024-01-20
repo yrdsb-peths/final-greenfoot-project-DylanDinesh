@@ -33,7 +33,7 @@ public class Seagrass extends Actor
         }
 
         // Bottom Side
-        if (sideSpawned == 1) 
+        else if (sideSpawned == 1) 
         {
             int x = getX();
             int y = getY() - speed;
@@ -41,7 +41,7 @@ public class Seagrass extends Actor
         }
 
         // Right Side
-        if (sideSpawned == 2) 
+        else if (sideSpawned == 2) 
         {
             int x = getX() - speed;
             int y = getY();
@@ -49,7 +49,7 @@ public class Seagrass extends Actor
         }
 
         // Left Side
-        if (sideSpawned == 3) 
+        else if (sideSpawned == 3) 
         {
             int x = getX() + speed;
             int y = getY();

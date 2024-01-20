@@ -22,6 +22,7 @@ public class MyWorld extends World
     int speedBoostInterval;
     public boolean lose = false;
     GreenfootSound backgroundMusic = new GreenfootSound("background.mp3");
+    GreenfootSound gameOverMusic = new GreenfootSound("lose.mp3");
 
     public MyWorld()
     {    
@@ -52,7 +53,6 @@ public class MyWorld extends World
         {
             loseScreen();
         }
-
     }
 
     public void increaseScore()
@@ -89,7 +89,7 @@ public class MyWorld extends World
         }
 
         // Bottom Side
-        if (random == 1)
+        else if (random == 1)
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 400;
@@ -99,7 +99,7 @@ public class MyWorld extends World
         }
 
         // Right Side
-        if (random == 2)
+        else if (random == 2)
         {
             int x = 600;
             int y = Greenfoot.getRandomNumber(400);
@@ -109,7 +109,7 @@ public class MyWorld extends World
         }
 
         // Left Side
-        if (random == 3)
+        else if (random == 3)
         {
             int x = 0;
             int y = Greenfoot.getRandomNumber(400);
@@ -138,7 +138,7 @@ public class MyWorld extends World
         }
 
         // Bottom Side
-        if (random == 1)
+        else if (random == 1)
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 400;
@@ -148,7 +148,7 @@ public class MyWorld extends World
         }
 
         // Right Side
-        if (random == 2)
+        else if (random == 2)
         {
             int x = 600;
             int y = Greenfoot.getRandomNumber(400);
@@ -158,7 +158,7 @@ public class MyWorld extends World
         }
 
         // Left Side
-        if (random == 3)
+        else if (random == 3)
         {
             int x = 0;
             int y = Greenfoot.getRandomNumber(400);
@@ -182,7 +182,7 @@ public class MyWorld extends World
         }
 
         // Bottom Side
-        if (random == 1)
+        else if (random == 1)
         {
             int x = Greenfoot.getRandomNumber(600);
             int y = 400;
@@ -192,7 +192,7 @@ public class MyWorld extends World
         }
 
         // Right Side
-        if (random == 2)
+        else if (random == 2)
         {
             int x = 600;
             int y = Greenfoot.getRandomNumber(400);
@@ -202,7 +202,7 @@ public class MyWorld extends World
         }
 
         // Left Side
-        if (random == 3)
+        else if (random == 3)
         {
             int x = 0;
             int y = Greenfoot.getRandomNumber(400);
@@ -214,8 +214,22 @@ public class MyWorld extends World
 
     public void loseScreen()
     {
-        backgroundMusic.stop();;
-        EndScreen gameEnd = new EndScreen(score);
-        Greenfoot.setWorld(gameEnd);
+        backgroundMusic.stop();
+        GameOver gameOverScreen = new GameOver();
+        addObject(gameOverScreen, getWidth()/2, getHeight()/2);
+        gameOverMusic.play();
+        Label gameOver = new Label("GAME OVER", 40);
+        addObject(gameOver,300,244);
+        Label  finalScore = new Label("Final Score is: " + score, 40);
+        addObject(finalScore,300,150);
+        Label spaceToRetry = new Label("Press Space to retry....", 40);
+        addObject(spaceToRetry,300,200);
+        removeObject(seagrass);
+        if (Greenfoot.isKeyDown("space")) {
+            gameOverMusic.pause();
+            Trash.speed = 1;
+            removeObject(gameOverScreen);
+            Greenfoot.setWorld(new MyWorld());
+        }
     }
 }

@@ -20,10 +20,10 @@ public class StartScreen extends World
         super(600, 400, 1); 
         prepare();
         setBackground("start.png");
-        openingSong.play();
+        openingSong.play(); 
         addObject(titleLabel, getWidth()/2, 40);
-        prepare();
-    }
+        prepare();  
+    } 
 
     /**
      * The main world opens by clicking the space bar. 
