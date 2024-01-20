@@ -232,6 +232,7 @@ public class MyWorld extends World
             Trash.speed = 1;
             removeObject(gameOverScreen);
             removeObject(scoreboard);
+            removeObject(text);
             Greenfoot.setWorld(new MyWorld());
         }
     }
